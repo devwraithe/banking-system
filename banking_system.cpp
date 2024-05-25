@@ -36,6 +36,45 @@ void createAccount() {
     cout << "Account created successfully! Your account number is " << newAccount.accountNumber << endl;
 }
 
+void displayAccountInfo() {
+    int acctNumber;
+    cout << "Enter account number: ";
+    cin >> acctNumber;
+
+    bool found = false;
+
+    for (size_t i = 0; i < accounts.size(); ++i) {
+        const Account& account = accounts[i];
+        if (account.accountNumber == acctNumber) {
+            cout << "Account Number: " << account.accountNumber << endl;
+            cout << "Account Holder Name: " << account.accountHolderName << endl;
+            cout << "Balance: $" << account.balance << endl;
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        cout << "Account not found!" << endl;
+    }
+}
+
+void displayAllAccounts() {
+    if (accounts.empty()) {
+        cout << "No accounts found." << endl;
+        return;
+    }
+
+    cout << "List of all accounts:" << endl;
+    for (size_t i = 0; i < accounts.size(); ++i) {
+        const Account& account = accounts[i];
+        cout << "Account Number: " << account.accountNumber << endl;
+        cout << "Account Holder Name: " << account.accountHolderName << endl;
+        cout << "Balance: $" << account.balance << endl;
+        cout << "-----------------------------" << endl;
+    }
+}
+
 int main() {
     int choice;
 
@@ -46,7 +85,8 @@ int main() {
         cout << "3. Deposit Funds" << endl;
         cout << "4. Withdraw Funds" << endl;
         cout << "5. Delete Account" << endl;
-        cout << "6. Exit" << endl;
+        cout << "6. Display All Accounts" << endl;
+        cout << "7. Exit" << endl;
         cout << "Enter your choice:" << endl;
         cin >> choice;
         cout << "Your choice: " << choice << endl;
@@ -56,7 +96,7 @@ int main() {
                 createAccount();
                 break; 
             case 2:
-                cout << "Show account information is coming soon!" << endl;
+                displayAccountInfo();
                 break;
             case 3:
                 cout << "Deposit funds is coming soon!" << endl;
@@ -68,10 +108,14 @@ int main() {
                 cout << "Delete account is coming soon!" << endl;
                 break;
             case 6:
-                cout << "Thank you for using C++ Microfinance Bank. Have a nice day!" << endl;
+                displayAllAccounts();
                 break;
+            case 7:
+                cout << "Thank you for using C++ Microfinance Bank. Have a nice day!" << endl;
+                return 0;
             default:
                 cout << "Invalid choice. Please try again." << endl;
+                break;
         }
     }
 
