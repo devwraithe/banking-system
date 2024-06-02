@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 class Account {
     public:
         int accountNumber;
@@ -14,6 +15,12 @@ class Account {
         accountNumber = acctNumber;
         accountHolderName = acctHolderName;
         balance = initialBalance;
+    }
+
+
+    void deposit(unsigned int amount) {
+        balance += amount;
+        cout << "Amount deposited successfully! New balance: $" << balance << endl;
     }
 };
 
@@ -75,6 +82,34 @@ void displayAllAccounts() {
     }
 }
 
+// Find a particular account
+int findAccount(int acctNummber) {
+    for(int i = 0; i < accounts.size(); i++) {
+        if(accounts[i].accountNumber == acctNummber) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+void depositFunds() {
+    int acctNumber;
+    cout << "Enter account number: ";
+    cin >> acctNumber;
+
+    int index = findAccount(acctNumber);
+
+    if(index != -1) {
+        unsigned int amount;
+        cout << "Enter deposit amount: ";
+        cin >> amount;
+        accounts[index].deposit(amount);
+    } else {
+        cout << "Account not found!" << endl;
+    }
+}
+
 int main() {
     int choice;
 
@@ -99,7 +134,7 @@ int main() {
                 displayAccountInfo();
                 break;
             case 3:
-                cout << "Deposit funds is coming soon!" << endl;
+                depositFunds();
                 break;
             case 4:
                 cout << "Withdraw funds is coming soon!" << endl;
