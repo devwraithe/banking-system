@@ -110,7 +110,28 @@ void depositFunds() {
     }
 }
 
+// Delete account based on account number
+void deleteAccount() {
+    int acctNumber;
+    cout << "Enter your account number: ";
+    cin >> acctNumber;
+
+    // Find the acccount index in the vector i.e accounts list
+    int index = findAccount(acctNumber);
+
+    // If account is found, delete it
+    if(index != -1) {
+        accounts.erase(accounts.begin() + index);
+        cout << "Account deleted successfully!" << endl;
+    }
+    else {
+        // If account is not found, notify the user
+        cout << "Account not found!" << endl;
+    }
+}
+
 int main() {
+    
     int choice;
 
     while (true) {
@@ -140,7 +161,7 @@ int main() {
                 cout << "Withdraw funds is coming soon!" << endl;
                 break;
             case 5:
-                cout << "Delete account is coming soon!" << endl;
+                deleteAccount();
                 break;
             case 6:
                 displayAllAccounts();
