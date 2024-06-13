@@ -21,17 +21,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f5ee312-6d75-447e-9889-1de801e820d4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/banking_system" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/banking_system.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/banking_system.dSYM/Contents/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/banking_system.dSYM/Contents/Resources/DWARF/banking_system" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/banking_system.dSYM/Contents/Resources/Relocations/x86_64/banking_system.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Debug/banking_system.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Debug/outDebug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +112,7 @@
       <workItem from="1718292813218" duration="499000" />
       <workItem from="1718293485940" duration="49000" />
       <workItem from="1718293543352" duration="189000" />
-      <workItem from="1718293741778" duration="1020000" />
+      <workItem from="1718293741778" duration="1095000" />
     </task>
     <servers />
   </component>
