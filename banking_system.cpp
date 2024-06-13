@@ -130,6 +130,38 @@ void deleteAccount() {
     }
 }
 
+// Withdraw funds
+void withdrawFunds() {
+    int acctNumber;
+    cout << "Enter your account number: ";
+    cin >> acctNumber;
+
+    // Find the acccount index in the vector i.e accounts list
+    int index = findAccount(acctNumber);
+
+    // If account is found, proceed with withdrawal
+    if(index != -1) {
+        double amount;
+        cout << "Enter withdrawal amount: ";
+        cin >> amount;
+
+        // Check if there is a sufficient fund
+        if(accounts[index].balance >= amount) {
+            accounts[index].balance -= amount;
+            cout << "Amount withdrawn successfully! New balance is " <<  accounts[index].balance << endl;
+        }
+        else {
+            // If insufficient funds, notify user
+            cout << "Insufficient funds! Current balance is " << accounts[index].balance << endl;
+        }
+
+    }
+    else {
+        // Notify the user if account is not found
+        cout << "Account is not found!" << endl;
+    }
+}
+
 int main() {
     
     int choice;
@@ -158,7 +190,7 @@ int main() {
                 depositFunds();
                 break;
             case 4:
-                cout << "Withdraw funds is coming soon!" << endl;
+                withdrawFunds();
                 break;
             case 5:
                 deleteAccount();
